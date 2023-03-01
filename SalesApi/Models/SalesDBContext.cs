@@ -1,0 +1,15 @@
+﻿using Microsoft.EntityFrameworkCore;
+using SalesApi.Models;
+
+namespace SalesApi.Models; 
+public class SalesDBContext : DbContext {
+
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderLine> OrderLines { get; set; }
+    public DbSet<Item> Items { get; set; }
+
+    public SalesDBContext(DbContextOptions<SalesDBContext> options) : base(options) { }
+
+}
